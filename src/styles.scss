@@ -1,3 +1,13 @@
-@use 'bootstrap';
-@use 'bootstrap-icons';
+$cor-primaria: #ec6afa;
+$cor-primaria: #6b2dc2;
+$fonte-padrao: Georgia, 'Times New Roman', serif;
 
+
+@use 'bootstrap/scss/bootstrap' with (
+    $primary: $cor-primaria,
+    $secondary: $cor-primaria,
+    $font-family-base: $fonte-padrao,
+    $font-family-sans-serif: $fonte-padrao
+);
+
+@use 'bootstrap-icons';
