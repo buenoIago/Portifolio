@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
+import { Sobre } from './components/sobre/sobre';
 
 @Component({
-  imports: [Navbar],
+  imports: [Navbar, Sobre],
   selector: 'app-root',
   templateUrl: './app.html',
 })
