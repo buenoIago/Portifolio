@@ -24,8 +24,8 @@ export class Navbar {
       icone: 'bi-compass'
     },
     {
-      titulo: 'Portifólio',
-      url: '#portifolio',
+      titulo: 'Projetos',
+      url: '#projetos',
       icone: 'bi-briefcase'
     }
   ];
