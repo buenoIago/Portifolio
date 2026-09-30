@@ -131,12 +131,6 @@ export class Habilidades {
         },
 
         {
-            imagem: 'https://skillicons.dev/icons?i=visualstudio&theme=dark',
-            titulo: 'Visual Studio',
-            descricao: 'Ambiente de desenvolvimento para aplicações com .NET e C#.'
-        },
-
-        {
             imagem: 'https://skillicons.dev/icons?i=githubactions&theme=dark',
             titulo: 'GitHub Actions',
             descricao: 'Automação de processos de integração e entrega contínua.'
