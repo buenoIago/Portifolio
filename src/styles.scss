@@ -1,5 +1,9 @@
-$cor-primaria: #ec6afa;
-$cor-primaria: #6b2dc2;
+$cor-primaria: #60A5FA;
+$cor-fundo: #0A0A0A;
+$cor-superficie: #111111;
+$cor-texto: #F5F5F5;
+$cor-texto-secundario: #8A8A8A;
+$cor-borda: #242424;
 $fonte-padrao: Georgia, 'Times New Roman', serif;
 
 
@@ -18,13 +22,13 @@ section {
 }
 
 .sobre-banner-text {
-    background: linear-gradient(90deg, rgba(229, 62, 168, 0.906), rgba(236, 200, 254, 0.925) 60%);
+    background: linear-gradient(90deg, #60A5FA, #93C5FD 60%);
     background-clip: text;
     color: transparent;
 }
 
 .sobre-banner-img{
-    background: linear-gradient(90deg, rgba(229, 62, 168, 0.906), rgba(172, 47, 189, 0.925) 60%);
+    background: linear-gradient(90deg, #60A5FA, #2563EB 60%);
     border-radius: 33% 67% 53% 47% / 66% 41% 59% 34%;
     height: 25rem;
     width: 25rem;
