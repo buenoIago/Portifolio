@@ -3,8 +3,12 @@
         <h2 class="display-5 fw-medium fst-italic text-center text-primary">Habilidades</h2>
     
         <p class="mt-5 fs-5 text-center">
-            Aqui, você poderá conhecer as principais tecnologias que utilizo no desenvolvimentos de aplicações
+            Tecnologias e ferramentas que fazem parte da minha jornada como desenvolvedor Full Stack.
         </p>
+
+        <h2 class="fs-4 fw-semibold text-primary mt-5 mb-3">
+            Linguagens de Programação
+        </h2>
 
         <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
             @for (habilidade of habilidades; track habilidade.titulo) {
@@ -17,6 +21,90 @@
                                 {{ habilidade.titulo }}
                             </h3>
                             <p class="fs-5 mb-0">{{ habilidade.descricao }}</p>
+                        </div>
+                    </article>
+                </li>
+            }
+        </ul>
+
+        <h2 class="fs-4 fw-semibold text-primary mt-5 mb-3">
+            Frameworks
+        </h2>
+
+        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
+            @for (framework of frameworks; track framework.titulo) {
+                <li class="col">
+                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        <img width="64" height="64" [src]="framework.imagem" [alt]="framework.titulo">
+
+                        <div>
+                            <h3 class="fs-4 fw-medium fst-italic text-primary-emphasis">
+                                {{ framework.titulo }}
+                            </h3>
+                            <p class="fs-5 mb-0">{{ framework.descricao }}</p>
+                        </div>
+                    </article>
+                </li>
+            }
+        </ul>
+
+        <h2 class="fs-4 fw-semibold text-primary mt-5 mb-3">
+            Database
+        </h2>
+
+        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
+            @for (database of database; track database.titulo) {
+                <li class="col">
+                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        <img width="64" height="64" [src]="database.imagem" [alt]="database.titulo">
+
+                        <div>
+                            <h3 class="fs-4 fw-medium fst-italic text-primary-emphasis">
+                                {{ database.titulo }}
+                            </h3>
+                            <p class="fs-5 mb-0">{{ database.descricao }}</p>
+                        </div>
+                    </article>
+                </li>
+            }
+        </ul>
+
+        <h2 class="fs-4 fw-semibold text-primary mt-5 mb-3">
+            Ferramentas
+        </h2>
+
+        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
+            @for (ferramenta of ferramentas; track ferramenta.titulo) {
+                <li class="col">
+                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        <img width="64" height="64" [src]="ferramenta.imagem" [alt]="ferramenta.titulo">
+
+                        <div>
+                            <h3 class="fs-4 fw-medium fst-italic text-primary-emphasis">
+                                {{ ferramenta.titulo }}
+                            </h3>
+                            <p class="fs-5 mb-0">{{ ferramenta.descricao }}</p>
+                        </div>
+                    </article>
+                </li>
+            }
+        </ul>
+
+        <h2 class="fs-4 fw-semibold text-primary mt-5 mb-3">
+            APIs
+        </h2>
+
+        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
+            @for (api of apis; track api.titulo) {
+                <li class="col">
+                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        <img width="64" height="64" [src]="api.imagem" [alt]="api.titulo">
+
+                        <div>
+                            <h3 class="fs-4 fw-medium fst-italic text-primary-emphasis">
+                                {{ api.titulo }}
+                            </h3>
+                            <p class="fs-5 mb-0">{{ api.descricao }}</p>
                         </div>
                     </article>
                 </li>
