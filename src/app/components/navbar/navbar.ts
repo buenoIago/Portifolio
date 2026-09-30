@@ -15,7 +15,7 @@ interface ItemNavBar {
 export class Navbar {
     public readonly itens: ItemNavBar[] = [
     { titulo: 'Sobre',
-      url: '#Sobre',
+      url: '#sobre',
       icone: 'bi-person'
     },
     {
