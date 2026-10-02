@@ -82,8 +82,8 @@ li:nth-child(even) article {
     background: linear-gradient(
         110deg,
         $cor-habilidades 0%,
-        $cor-habilidades 20%,
-        $cor-projetos 100%
+        $cor-habilidades 25%,
+        $cor-projetos 60%
     );
 }
 
@@ -120,4 +120,18 @@ li:nth-child(even) article {
     color: $cor-fundo;
     background-color: $cor-primaria;
     border-color: $cor-primaria;
+}
+
+// CONTATOS
+
+#contatos {
+    background-color: $cor-sobre;
+}
+
+#contatos > article {
+    background-color: #1C1C1C;
+    border: 1px solid $cor-borda;
+    border-radius: 1rem;
+    padding: 3rem;
+    max-width: 700px;
 }
