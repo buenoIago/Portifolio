@@ -7,6 +7,8 @@ $cor-borda: #242424;
 $fonte-padrao: Georgia, 'Times New Roman', serif;
 
 $cor-sobre: #171717;
+$cor-habilidades: #212529;
+$cor-projetos: #171717;
 
 @use 'bootstrap/scss/bootstrap' with (
     $primary: $cor-primaria,
@@ -35,11 +37,11 @@ li:nth-child(even) article {
     background-color: #161616;
 }
 
+// SOBRE
+
 #sobre {
     background-color: $cor-sobre;
 }
-
-// SOBRE
 
 .sobre-banner-text {
     background: linear-gradient(90deg, #60A5FA, #93C5FD 60%);
@@ -57,19 +59,65 @@ li:nth-child(even) article {
 
 // HABILIDADE
 
-.card-habilidade {
-    background-color: $cor-superficie; // #111111
-    border: 1px solid $cor-borda; // #242424
+#habilidades article {
+    background-color: $cor-superficie;
+    border: 1px solid $cor-borda;
 }
 
-.icone-habilidade {
-    color: $cor-primaria; // #60A5FA
+#habilidades article h3 {
+    color: $cor-texto;
 }
 
-.nome-habilidade {
-    color: $cor-texto; // #F5F5F5
+#habilidades article p {
+    color: $cor-texto-secundario;
 }
 
-.descricao-habilidade {
-    color: $cor-texto-secundario; // #8A8A8A
+#habilidades h2 {
+    color: $cor-primaria;
+}
+
+//PROJETOS
+
+#projetos {
+    background: linear-gradient(
+        110deg,
+        $cor-habilidades 0%,
+        $cor-habilidades 20%,
+        $cor-projetos 100%
+    );
+}
+
+#projetos h2,
+#projetos h3 {
+    color: $cor-texto;
+}
+
+#projetos p {
+    color: $cor-texto-secundario;
+}
+
+#projetos ol li > article {
+    background-color: #1C1C1C;
+    border: 1px solid $cor-borda;
+}
+
+#projetos ol li > span {
+    color: $cor-primaria;
+    opacity: 0.7;
+}
+
+#projetos .badge {
+    color: $cor-texto !important;
+    border-color: $cor-borda !important;
+}
+
+#projetos .btn-outline-dark {
+    color: $cor-texto;
+    border-color: $cor-borda;
+}
+
+#projetos .btn-outline-dark:hover {
+    color: $cor-fundo;
+    background-color: $cor-primaria;
+    border-color: $cor-primaria;
 }
