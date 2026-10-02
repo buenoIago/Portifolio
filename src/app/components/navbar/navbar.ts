@@ -27,6 +27,11 @@ export class Navbar {
       titulo: 'Projetos',
       url: '#projetos',
       icone: 'bi-briefcase'
+    },
+    {
+      titulo: 'Contatos',
+      url: '#contatos',
+      icone: 'bi-person-lines-fill'
     }
   ];
 }
