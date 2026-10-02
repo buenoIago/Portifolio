@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ModalProjeto } from './modal-projeto/modal-projeto';
 
 interface Projeto{
   titulo: string;
@@ -9,12 +10,14 @@ interface Projeto{
 }
 
 @Component({
-  imports: [],
+  imports: [ModalProjeto],
   selector: 'app-projetos',
   templateUrl: './projetos.html',
 })
 
 export class Projetos {
+  public readonly projetosSelecionado = signal<Projeto | undefined>(undefined);
+
   public readonly projetos: Projeto[] = [
     {
       titulo: 'Gerador de Certificados Online',
@@ -60,4 +63,5 @@ export class Projetos {
       descricao: `A aplicação organiza disciplinas, matérias e questões para permitir a criação de testes personalizados. Os testes podem ser gerados com questões selecionadas aleatoriamente, duplicados e exportados em PDF junto com seus respectivos gabaritos.`,
     },
   ];
+
 }

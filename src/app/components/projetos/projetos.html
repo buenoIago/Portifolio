@@ -32,7 +32,10 @@
               <div class="d-flex flex-wrap gap-2 ms-auto">
                 @if (projeto.urlImagem) {
                   <button
+                    (click)="projetosSelecionado.set(projeto)"
                     type="button"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#projetosModal"
                     class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
                   >
                     <i class="bi bi-image"></i>
@@ -57,3 +60,8 @@
     </ol>
     </article>
 </section>
+
+<app-modal-projeto 
+[projeto]="projetosSelecionado()" 
+(modalFechado)="projetosSelecionado.set(undefined)"
+></app-modal-projeto>
