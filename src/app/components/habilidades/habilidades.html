@@ -1,114 +1,202 @@
-<section id="habilidades" class="">
+<section id="habilidades">
     <div class="container my-5">
-        <h2 class="display-5 fw-medium fst-italic text-destaque text-center">Habilidades</h2>
-    
+
+        <h2 class="display-5 fw-medium fst-italic text-destaque text-center">
+            Habilidades
+        </h2>
+
         <p class="mt-5 fs-5 text-center texto-secundario">
             Tecnologias e ferramentas que fazem parte da minha jornada como desenvolvedor Full Stack.
         </p>
 
-        <h2 class="fs-4 fw-semibold text-destaque mt-5 mb-3">
-            Linguagens de Programação
-        </h2>
+        <div class="gaveta">
+            <button
+                class="gaveta-cabecalho"
+                type="button"
+                (click)="gavetaAberta = !gavetaAberta"
+            >
+                <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                    Linguagens de Programação
+                </h2>
 
-        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
-            @for (habilidade of habilidades; track habilidade.titulo) {
-                <li class="col">
-                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-                        <img width="64" height="64" [src]="habilidade.imagem" [alt]="habilidade.titulo">
+                <span
+                    class="fs-3 text-destaque gaveta-icone"
+                    [class.aberta]="gavetaAberta"
+                >
+                ⌄
+                </span>
+            </button>
 
-                        <div>
-                            <h3 class="fs-4 fw-medium fst-italic texto">
-                                {{ habilidade.titulo }}
-                            </h3>
-                            <p class="fs-5 mb-0 texto-secundario">{{ habilidade.descricao }}</p>
-                        </div>
-                    </article>
-                </li>
+            @if (gavetaAberta) {
+                <div class="gaveta-conteudo">
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+                        @for (habilidade of habilidades; track habilidade.titulo) {
+                            <li class="col">
+
+                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+
+                                    <img
+                                        width="64"
+                                        height="64"
+                                        [src]="habilidade.imagem"
+                                        [alt]="habilidade.titulo"
+                                    >
+
+                                    <div>
+                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ habilidade.titulo }} </h3>
+
+                                        <p class="fs-5 mb-0 texto-secundario"> {{ habilidade.descricao }} </p>
+                                    </div>
+
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
             }
-        </ul>
+        </div>
 
-        <h2 class="fs-4 fw-semibold text-destaque mt-5 mb-3">
-            Frameworks
-        </h2>
+        <div class="gaveta">
+            <div class="gaveta-cabecalho">
+                <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                    Frameworks
+                </h2>
 
-        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
-            @for (framework of frameworks; track framework.titulo) {
-                <li class="col">
-                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-                        <img width="64" height="64" [src]="framework.imagem" [alt]="framework.titulo">
+                <span class="fs-3 text-destaque">+</span>
+            </div>
 
-                        <div>
-                            <h3 class="fs-4 fw-medium fst-italic texto">
-                                {{ framework.titulo }}
-                            </h3>
-                            <p class="fs-5 mb-0 texto-secundario">{{ framework.descricao }}</p>
-                        </div>
-                    </article>
-                </li>
-            }
-        </ul>
+            <div class="gaveta-conteudo">
+                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-        <h2 class="fs-4 fw-semibold text-destaque mt-5 mb-3">
-            Database
-        </h2>
+                    @for (framework of frameworks; track framework.titulo) {
+                        <li class="col">
+                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
-            @for (database of database; track database.titulo) {
-                <li class="col">
-                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-                        <img width="64" height="64" [src]="database.imagem" [alt]="database.titulo">
+                                <img
+                                    width="64"
+                                    height="64"
+                                    [src]="framework.imagem"
+                                    [alt]="framework.titulo"
+                                >
 
-                        <div>
-                            <h3 class="fs-4 fw-medium fst-italic texto">
-                                {{ database.titulo }}
-                            </h3>
-                            <p class="fs-5 mb-0 texto-secundario">{{ database.descricao }}</p>
-                        </div>
-                    </article>
-                </li>
-            }
-        </ul>
+                                <div>
+                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ framework.titulo }} </h3>
 
-        <h2 class="fs-4 fw-semibold text-destaque mt-5 mb-3">
-            Ferramentas
-        </h2>
+                                    <p class="fs-5 mb-0 texto-secundario"> {{ framework.descricao }} </p>
+                                </div>
 
-        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
-            @for (ferramenta of ferramentas; track ferramenta.titulo) {
-                <li class="col">
-                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-                        <img width="64" height="64" [src]="ferramenta.imagem" [alt]="ferramenta.titulo">
+                            </article>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
 
-                        <div>
-                            <h3 class="fs-4 fw-medium fst-italic texto">
-                                {{ ferramenta.titulo }}
-                            </h3>
-                            <p class="fs-5 mb-0 texto-secundario">{{ ferramenta.descricao }}</p>
-                        </div>
-                    </article>
-                </li>
-            }
-        </ul>
+        <div class="gaveta">
+            <div class="gaveta-cabecalho">
+                <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                    Database
+                </h2>
 
-        <h2 class="fs-4 fw-semibold text-destaque mt-5 mb-3">
-            APIs
-        </h2>
+                <span class="fs-3 text-destaque">+</span>
+            </div>
 
-        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
-            @for (api of apis; track api.titulo) {
-                <li class="col">
-                    <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-                        <img width="64" height="64" [src]="api.imagem" [alt]="api.titulo">
+            <div class="gaveta-conteudo">
+                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                        <div>
-                            <h3 class="fs-4 fw-medium fst-italic texto">
-                                {{ api.titulo }}
-                            </h3>
-                            <p class="fs-5 mb-0 texto-secundario">{{ api.descricao }}</p>
-                        </div>
-                    </article>
-                </li>
-            }
-        </ul>
+                    @for (database of database; track database.titulo) {
+                        <li class="col">
+                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+
+                                <img
+                                    width="64"
+                                    height="64"
+                                    [src]="database.imagem"
+                                    [alt]="database.titulo"
+                                >
+
+                                <div>
+                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ database.titulo }} </h3>
+
+                                    <p class="fs-5 mb-0 texto-secundario"> {{ database.descricao }} </p>
+                                </div>
+
+                            </article>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="gaveta">
+            <div class="gaveta-cabecalho">
+                <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                    Ferramentas
+                </h2>
+
+                <span class="fs-3 text-destaque">+</span>
+            </div>
+
+            <div class="gaveta-conteudo">
+                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+
+                    @for (ferramenta of ferramentas; track ferramenta.titulo) {
+                        <li class="col">
+                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+
+                                <img
+                                    width="64"
+                                    height="64"
+                                    [src]="ferramenta.imagem"
+                                    [alt]="ferramenta.titulo"
+                                >
+
+                                <div>
+                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ ferramenta.titulo }} </h3>
+
+                                    <p class="fs-5 mb-0 texto-secundario">  {{ ferramenta.descricao }} </p>
+                                </div>
+                            </article>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="gaveta">
+            <div class="gaveta-cabecalho">
+                <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                    APIs
+                </h2>
+
+                <span class="fs-3 text-destaque">+</span>
+            </div>
+
+            <div class="gaveta-conteudo">
+                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+
+                    @for (api of apis; track api.titulo) {
+                        <li class="col">
+                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+
+                                <img
+                                    width="64"
+                                    height="64"
+                                    [src]="api.imagem"
+                                    [alt]="api.titulo"
+                                >
+
+                                <div>
+                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ api.titulo }} </h3>
+
+                                    <p class="fs-5 mb-0 texto-secundario"> {{ api.descricao }} </p>
+                                </div>
+
+                            </article>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
 </section>

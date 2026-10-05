@@ -6,7 +6,6 @@ interface Habilidade {
     descricao: string;
 }
 
-
 @Component({
     selector: 'app-habilidades',
     imports: [],
@@ -14,6 +13,9 @@ interface Habilidade {
 })
 
 export class Habilidades {
+
+    public gavetaAberta = false
+    
     public readonly habilidades: Habilidade[] = [
 
         {
