@@ -14,8 +14,8 @@ interface Habilidade {
 
 export class Habilidades {
 
-    public gavetaAberta = false
-    
+    public gavetaAberta: string | null = null;
+
     public readonly habilidades: Habilidade[] = [
 
         {

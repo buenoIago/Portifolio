@@ -13,7 +13,7 @@
             <button
                 class="gaveta-cabecalho"
                 type="button"
-                (click)="gavetaAberta = !gavetaAberta"
+                (click)="gavetaAberta = gavetaAberta === 'linguagens' ? null : 'linguagens'"
             >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Linguagens de Programação
@@ -21,13 +21,13 @@
 
                 <span
                     class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta"
+                    [class.aberta]="gavetaAberta === 'linguagens'"
                 >
                 ⌄
                 </span>
             </button>
 
-            @if (gavetaAberta) {
+            @if (gavetaAberta === 'linguagens') {
                 <div class="gaveta-conteudo">
                     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
                         @for (habilidade of habilidades; track habilidade.titulo) {
@@ -60,7 +60,7 @@
             <button
                 class="gaveta-cabecalho"
                 type="button"
-                (click)="gavetaAberta = !gavetaAberta"
+                (click)="gavetaAberta = gavetaAberta === 'frameworks' ? null : 'frameworks'"
             >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Frameworks
@@ -68,13 +68,13 @@
 
                 <span
                     class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta"
+                    [class.aberta]="gavetaAberta === 'frameworks'"
                 >
                 ⌄
                 </span>
             </button>
 
-            @if (gavetaAberta){
+            @if (gavetaAberta === 'frameworks') {
                 <div class="gaveta-conteudo">
                     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
@@ -107,7 +107,7 @@
             <button
                 class="gaveta-cabecalho"
                 type="button"
-                (click)="gavetaAberta = !gavetaAberta"
+                (click)="gavetaAberta = gavetaAberta === 'database' ? null : 'database'"
             >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Database
@@ -115,13 +115,13 @@
 
                 <span
                     class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta"
+                    [class.aberta]="gavetaAberta === 'database'"
                 >
                 ⌄
                 </span>
             </button>
 
-            @if (gavetaAberta) {
+            @if (gavetaAberta === 'database') {
                 <div class="gaveta-conteudo">
                     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
@@ -154,7 +154,7 @@
             <button
                 class="gaveta-cabecalho"
                 type="button"
-                (click)="gavetaAberta = !gavetaAberta"
+                (click)="gavetaAberta = gavetaAberta === 'ferramentas' ? null : 'ferramentas'"
             >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Ferramentas
@@ -162,13 +162,13 @@
 
                 <span
                     class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta"
+                    [class.aberta]="gavetaAberta === 'ferramentas'"
                 >
                 ⌄
                 </span>
             </button>
 
-            @if (gavetaAberta) {
+            @if (gavetaAberta === 'ferramentas') {
                 <div class="gaveta-conteudo">
                     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
@@ -200,7 +200,7 @@
             <button
                 class="gaveta-cabecalho"
                 type="button"
-                (click)="gavetaAberta = !gavetaAberta"
+                (click)="gavetaAberta = gavetaAberta === 'apis' ? null : 'apis'"
             >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     APIs
@@ -208,13 +208,13 @@
 
                 <span
                     class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta"
+                    [class.aberta]="gavetaAberta === 'apis'"
                 >
                 ⌄
                 </span>
             </button>
 
-            @if (gavetaAberta) {
+            @if (gavetaAberta === 'apis') {
                 <div class="gaveta-conteudo">
                     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
