@@ -57,146 +57,190 @@
         </div>
 
         <div class="gaveta">
-            <div class="gaveta-cabecalho">
+            <button
+                class="gaveta-cabecalho"
+                type="button"
+                (click)="gavetaAberta = !gavetaAberta"
+            >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Frameworks
                 </h2>
 
-                <span class="fs-3 text-destaque">+</span>
-            </div>
+                <span
+                    class="fs-3 text-destaque gaveta-icone"
+                    [class.aberta]="gavetaAberta"
+                >
+                ⌄
+                </span>
+            </button>
 
-            <div class="gaveta-conteudo">
-                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+            @if (gavetaAberta){
+                <div class="gaveta-conteudo">
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                    @for (framework of frameworks; track framework.titulo) {
-                        <li class="col">
-                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        @for (framework of frameworks; track framework.titulo) {
+                            <li class="col">
+                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-                                <img
-                                    width="64"
-                                    height="64"
-                                    [src]="framework.imagem"
-                                    [alt]="framework.titulo"
-                                >
+                                    <img
+                                        width="64"
+                                        height="64"
+                                        [src]="framework.imagem"
+                                        [alt]="framework.titulo"
+                                    >
 
-                                <div>
-                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ framework.titulo }} </h3>
+                                    <div>
+                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ framework.titulo }} </h3>
 
-                                    <p class="fs-5 mb-0 texto-secundario"> {{ framework.descricao }} </p>
-                                </div>
+                                        <p class="fs-5 mb-0 texto-secundario"> {{ framework.descricao }} </p>
+                                    </div>
 
-                            </article>
-                        </li>
-                    }
-                </ul>
-            </div>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         </div>
 
         <div class="gaveta">
-            <div class="gaveta-cabecalho">
+            <button
+                class="gaveta-cabecalho"
+                type="button"
+                (click)="gavetaAberta = !gavetaAberta"
+            >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Database
                 </h2>
 
-                <span class="fs-3 text-destaque">+</span>
-            </div>
+                <span
+                    class="fs-3 text-destaque gaveta-icone"
+                    [class.aberta]="gavetaAberta"
+                >
+                ⌄
+                </span>
+            </button>
 
-            <div class="gaveta-conteudo">
-                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+            @if (gavetaAberta) {
+                <div class="gaveta-conteudo">
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                    @for (database of database; track database.titulo) {
-                        <li class="col">
-                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        @for (database of database; track database.titulo) {
+                            <li class="col">
+                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-                                <img
-                                    width="64"
-                                    height="64"
-                                    [src]="database.imagem"
-                                    [alt]="database.titulo"
-                                >
+                                    <img
+                                        width="64"
+                                        height="64"
+                                        [src]="database.imagem"
+                                        [alt]="database.titulo"
+                                    >
 
-                                <div>
-                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ database.titulo }} </h3>
+                                    <div>
+                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ database.titulo }} </h3>
 
-                                    <p class="fs-5 mb-0 texto-secundario"> {{ database.descricao }} </p>
-                                </div>
+                                        <p class="fs-5 mb-0 texto-secundario"> {{ database.descricao }} </p>
+                                    </div>
 
-                            </article>
-                        </li>
-                    }
-                </ul>
-            </div>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         </div>
 
         <div class="gaveta">
-            <div class="gaveta-cabecalho">
+            <button
+                class="gaveta-cabecalho"
+                type="button"
+                (click)="gavetaAberta = !gavetaAberta"
+            >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     Ferramentas
                 </h2>
 
-                <span class="fs-3 text-destaque">+</span>
-            </div>
+                <span
+                    class="fs-3 text-destaque gaveta-icone"
+                    [class.aberta]="gavetaAberta"
+                >
+                ⌄
+                </span>
+            </button>
 
-            <div class="gaveta-conteudo">
-                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+            @if (gavetaAberta) {
+                <div class="gaveta-conteudo">
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                    @for (ferramenta of ferramentas; track ferramenta.titulo) {
-                        <li class="col">
-                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        @for (ferramenta of ferramentas; track ferramenta.titulo) {
+                            <li class="col">
+                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-                                <img
-                                    width="64"
-                                    height="64"
-                                    [src]="ferramenta.imagem"
-                                    [alt]="ferramenta.titulo"
-                                >
+                                    <img
+                                        width="64"
+                                        height="64"
+                                        [src]="ferramenta.imagem"
+                                        [alt]="ferramenta.titulo"
+                                    >
 
-                                <div>
-                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ ferramenta.titulo }} </h3>
+                                    <div>
+                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ ferramenta.titulo }} </h3>
 
-                                    <p class="fs-5 mb-0 texto-secundario">  {{ ferramenta.descricao }} </p>
-                                </div>
-                            </article>
-                        </li>
-                    }
-                </ul>
-            </div>
+                                        <p class="fs-5 mb-0 texto-secundario">  {{ ferramenta.descricao }} </p>
+                                    </div>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         </div>
 
         <div class="gaveta">
-            <div class="gaveta-cabecalho">
+            <button
+                class="gaveta-cabecalho"
+                type="button"
+                (click)="gavetaAberta = !gavetaAberta"
+            >
                 <h2 class="fs-4 fw-semibold text-destaque mb-0">
                     APIs
                 </h2>
 
-                <span class="fs-3 text-destaque">+</span>
-            </div>
+                <span
+                    class="fs-3 text-destaque gaveta-icone"
+                    [class.aberta]="gavetaAberta"
+                >
+                ⌄
+                </span>
+            </button>
 
-            <div class="gaveta-conteudo">
-                <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+            @if (gavetaAberta) {
+                <div class="gaveta-conteudo">
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                    @for (api of apis; track api.titulo) {
-                        <li class="col">
-                            <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                        @for (api of apis; track api.titulo) {
+                            <li class="col">
+                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-                                <img
-                                    width="64"
-                                    height="64"
-                                    [src]="api.imagem"
-                                    [alt]="api.titulo"
-                                >
+                                    <img
+                                        width="64"
+                                        height="64"
+                                        [src]="api.imagem"
+                                        [alt]="api.titulo"
+                                    >
 
-                                <div>
-                                    <h3 class="fs-4 fw-medium fst-italic texto"> {{ api.titulo }} </h3>
+                                    <div>
+                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ api.titulo }} </h3>
 
-                                    <p class="fs-5 mb-0 texto-secundario"> {{ api.descricao }} </p>
-                                </div>
+                                        <p class="fs-5 mb-0 texto-secundario"> {{ api.descricao }} </p>
+                                    </div>
 
-                            </article>
-                        </li>
-                    }
-                </ul>
-            </div>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         </div>
     </div>
 </section>
