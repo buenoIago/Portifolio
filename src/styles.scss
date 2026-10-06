@@ -83,6 +83,15 @@ li:nth-child(even) article {
     object-position: center 30%;
 }
 
+@media (max-width: 768px) {
+
+    .inicio-foto {
+        width: 18rem;
+        height: 18rem;
+    }
+
+}
+
 // SOBRE
 
 #sobre {
