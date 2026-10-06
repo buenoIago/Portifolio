@@ -37,6 +37,51 @@ li:nth-child(even) article {
     background-color: #161616;
 }
 
+// INicio
+
+#inicio {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(96, 165, 250, 0.08),
+            transparent 35%
+        ),
+        $cor-fundo;
+}
+
+.inicio-titulo {
+    background: linear-gradient(
+        90deg,
+        $cor-primaria,
+        #93C5FD
+    );
+    background-clip: text;
+    color: transparent;
+}
+
+.inicio-foto {
+    width: 26rem;
+    height: 26rem;
+    margin: 0 auto;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 1px solid $cor-borda;
+    box-shadow: 0 0 50px rgba(96, 165, 250, 0.08);
+}
+
+.inicio-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
 // SOBRE
 
 #sobre {
