@@ -22,6 +22,7 @@ $cor-projetos: #171717;
 section {
     display: flex;
     min-height: 94vh;
+    scroll-margin-top: 50px;
 }
 
 article {
@@ -131,67 +132,149 @@ li:nth-child(even) article {
 
 // HABILIDADE
 
-#habilidades article {
-    background-color: $cor-superficie;
-    border: 1px solid $cor-borda;
+#habilidades {
+    padding: 3rem 0;
 }
 
-#habilidades article h3 {
-    color: $cor-texto;
-}
-
-#habilidades article p {
-    color: $cor-texto-secundario;
+#habilidades > .container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 #habilidades h2 {
     color: $cor-primaria;
 }
 
+// GAVETA
+
 .gaveta {
-    margin-top: 2rem;
-    border: 1px solid $cor-borda;
+    margin-top: 1.5rem;
+
     background-color: $cor-superficie;
+    border: 1px solid $cor-borda;
+    border-radius: 0.5rem;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.gaveta:hover {
+    border-color: rgba(96, 165, 250, 0.45);
 }
 
 .gaveta-cabecalho {
+    position: relative;
+
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem 1.5rem;
-    background-color: transparent;
-    border: 0;
-    text-align: left;
 
+    padding: 1.5rem 1.75rem;
+
+    background: transparent;
+    border: 0;
+
+    text-align: left;
     cursor: pointer;
 }
 
-.gaveta-conteudo {
-    padding: 0 1.5rem 1.5rem;
+.gaveta-cabecalho::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background-color: $cor-primaria;
+
+    opacity: 0.7;
+}
+
+.gaveta-cabecalho h2 {
+    margin: 0;
+
+    color: $cor-texto;
+
+    transition: color 0.3s ease;
+}
+
+.gaveta:hover .gaveta-cabecalho h2 {
+    color: $cor-primaria;
 }
 
 .gaveta-icone {
-    display: inline-block;
-    transition: transform 0.3s ease;
+    color: $cor-texto-secundario;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.gaveta:hover .gaveta-icone {
+    color: $cor-primaria;
 }
 
 .gaveta-icone.aberta {
     transform: rotate(180deg);
+    color: $cor-primaria;
 }
 
-@keyframes abrir-gaveta {
+// CONTEÚDO DA VAGETA
 
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+.gaveta-conteudo {
+    padding: 0 1.75rem 1.5rem;
+}
+
+.habilidade {
+    padding: 1.25rem 0;
+}
+
+.habilidade img {
+    flex-shrink: 0;
+}
+
+.habilidade h3 {
+    color: $cor-texto;
+}
+
+.habilidade p {
+    color: $cor-texto-secundario;
+}
+
+// RESPONSIVO
+
+@media (max-width: 768px) {
+
+    #habilidades {
+        padding: 2.5rem 0;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .gaveta-cabecalho {
+        padding: 1.25rem;
     }
 
+    .gaveta-conteudo {
+        padding: 0 1.25rem 1.25rem;
+    }
+
+    .habilidade {
+        gap: 1rem !important;
+    }
+
+    .habilidade img {
+        width: 48px;
+        height: 48px;
+    }
 }
 
 //PROJETOS
