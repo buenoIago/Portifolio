@@ -96,7 +96,11 @@ li:nth-child(even) article {
 
 #sobre {
     background: $cor-sobre;
-    padding: 2rem 0;
+}
+
+#sobre .container {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
 }
 
 .sobre-subtitulo {
@@ -122,19 +126,18 @@ li:nth-child(even) article {
 .sobre-card {
     background: $cor-superficie;
     border: 1px solid $cor-borda;
-    padding: 2rem;
-    border-radius: 1rem;
 
+    padding: 1.5rem;
+    border-radius: 1rem;
     transition: .3s;
 }
 
-.sobre-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(96, 165, 250, 0.4);
+.sobre-card.mb-4 {
+    margin-bottom: 1rem !important;
 }
 
 .numero {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: rgba(96, 165, 250, 0.25);
 }
