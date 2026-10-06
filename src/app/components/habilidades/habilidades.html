@@ -1,246 +1,69 @@
 <section id="habilidades">
     <div class="container my-5">
 
-        <h2 class="display-5 fw-medium fst-italic text-destaque text-center">
-            Habilidades
-        </h2>
+        <h2 class="display-5 fw-medium fst-italic text-destaque text-center"> Habilidades </h2>
 
         <p class="mt-5 fs-5 text-center texto-secundario">
             Tecnologias e ferramentas que fazem parte da minha jornada como desenvolvedor Full Stack.
         </p>
 
-        <div class="gaveta">
-            <button
-                class="gaveta-cabecalho"
-                type="button"
-                (click)="gavetaAberta = gavetaAberta === 'linguagens' ? null : 'linguagens'"
-            >
-                <h2 class="fs-4 fw-semibold text-destaque mb-0">
-                    Linguagens de Programação
-                </h2>
+        @for (categoria of categorias; track categoria.id) {
 
-                <span
-                    class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta === 'linguagens'"
+            <div class="gaveta">
+
+                <button
+                    class="gaveta-cabecalho"
+                    type="button"
+                    (click)="gavetaAberta = gavetaAberta === categoria.id ? null : categoria.id"
                 >
-                ⌄
-                </span>
-            </button>
+                    <h2 class="fs-4 fw-semibold text-destaque mb-0">
+                        {{ categoria.titulo }}
+                    </h2>
 
-            @if (gavetaAberta === 'linguagens') {
-                <div class="gaveta-conteudo">
-                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
-                        @for (habilidade of habilidades; track habilidade.titulo) {
-                            <li class="col">
+                    <span
+                        class="fs-3 text-destaque gaveta-icone"
+                        [class.aberta]="gavetaAberta === categoria.id"
+                    >
+                        ⌄
+                    </span>
+                </button>
 
-                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                @if (gavetaAberta === categoria.id) {
 
-                                    <img
-                                        width="64"
-                                        height="64"
-                                        [src]="habilidade.imagem"
-                                        [alt]="habilidade.titulo"
-                                    >
+                    <div class="gaveta-conteudo">
 
-                                    <div>
-                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ habilidade.titulo }} </h3>
+                        <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
 
-                                        <p class="fs-5 mb-0 texto-secundario"> {{ habilidade.descricao }} </p>
-                                    </div>
+                            @for (habilidade of categoria.habilidades; track habilidade.titulo) {
 
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
+                                <li class="col">
 
-        <div class="gaveta">
-            <button
-                class="gaveta-cabecalho"
-                type="button"
-                (click)="gavetaAberta = gavetaAberta === 'frameworks' ? null : 'frameworks'"
-            >
-                <h2 class="fs-4 fw-semibold text-destaque mb-0">
-                    Frameworks
-                </h2>
+                                    <article class="habilidade d-flex align-items-center gap-4 h-100 border-bottom pb-4">
 
-                <span
-                    class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta === 'frameworks'"
-                >
-                ⌄
-                </span>
-            </button>
+                                        <img
+                                            width="64"
+                                            height="64"
+                                            [src]="habilidade.imagem"
+                                            [alt]="habilidade.titulo"
+                                        >
 
-            @if (gavetaAberta === 'frameworks') {
-                <div class="gaveta-conteudo">
-                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
+                                        <div>
+                                            <h3 class="fs-4 fw-medium fst-italic texto">
+                                                {{ habilidade.titulo }}
+                                            </h3>
 
-                        @for (framework of frameworks; track framework.titulo) {
-                            <li class="col">
-                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
+                                            <p class="fs-5 mb-0 texto-secundario">
+                                                {{ habilidade.descricao }}
+                                            </p>
+                                        </div>
 
-                                    <img
-                                        width="64"
-                                        height="64"
-                                        [src]="framework.imagem"
-                                        [alt]="framework.titulo"
-                                    >
-
-                                    <div>
-                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ framework.titulo }} </h3>
-
-                                        <p class="fs-5 mb-0 texto-secundario"> {{ framework.descricao }} </p>
-                                    </div>
-
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-
-        <div class="gaveta">
-            <button
-                class="gaveta-cabecalho"
-                type="button"
-                (click)="gavetaAberta = gavetaAberta === 'database' ? null : 'database'"
-            >
-                <h2 class="fs-4 fw-semibold text-destaque mb-0">
-                    Database
-                </h2>
-
-                <span
-                    class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta === 'database'"
-                >
-                ⌄
-                </span>
-            </button>
-
-            @if (gavetaAberta === 'database') {
-                <div class="gaveta-conteudo">
-                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
-
-                        @for (database of database; track database.titulo) {
-                            <li class="col">
-                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-
-                                    <img
-                                        width="64"
-                                        height="64"
-                                        [src]="database.imagem"
-                                        [alt]="database.titulo"
-                                    >
-
-                                    <div>
-                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ database.titulo }} </h3>
-
-                                        <p class="fs-5 mb-0 texto-secundario"> {{ database.descricao }} </p>
-                                    </div>
-
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-
-        <div class="gaveta">
-            <button
-                class="gaveta-cabecalho"
-                type="button"
-                (click)="gavetaAberta = gavetaAberta === 'ferramentas' ? null : 'ferramentas'"
-            >
-                <h2 class="fs-4 fw-semibold text-destaque mb-0">
-                    Ferramentas
-                </h2>
-
-                <span
-                    class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta === 'ferramentas'"
-                >
-                ⌄
-                </span>
-            </button>
-
-            @if (gavetaAberta === 'ferramentas') {
-                <div class="gaveta-conteudo">
-                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
-
-                        @for (ferramenta of ferramentas; track ferramenta.titulo) {
-                            <li class="col">
-                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-
-                                    <img
-                                        width="64"
-                                        height="64"
-                                        [src]="ferramenta.imagem"
-                                        [alt]="ferramenta.titulo"
-                                    >
-
-                                    <div>
-                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ ferramenta.titulo }} </h3>
-
-                                        <p class="fs-5 mb-0 texto-secundario">  {{ ferramenta.descricao }} </p>
-                                    </div>
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-
-        <div class="gaveta">
-            <button
-                class="gaveta-cabecalho"
-                type="button"
-                (click)="gavetaAberta = gavetaAberta === 'apis' ? null : 'apis'"
-            >
-                <h2 class="fs-4 fw-semibold text-destaque mb-0">
-                    APIs
-                </h2>
-
-                <span
-                    class="fs-3 text-destaque gaveta-icone"
-                    [class.aberta]="gavetaAberta === 'apis'"
-                >
-                ⌄
-                </span>
-            </button>
-
-            @if (gavetaAberta === 'apis') {
-                <div class="gaveta-conteudo">
-                    <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-4">
-
-                        @for (api of apis; track api.titulo) {
-                            <li class="col">
-                                <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-
-                                    <img
-                                        width="64"
-                                        height="64"
-                                        [src]="api.imagem"
-                                        [alt]="api.titulo"
-                                    >
-
-                                    <div>
-                                        <h3 class="fs-4 fw-medium fst-italic texto"> {{ api.titulo }} </h3>
-
-                                        <p class="fs-5 mb-0 texto-secundario"> {{ api.descricao }} </p>
-                                    </div>
-
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
+                                    </article>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        }
     </div>
 </section>
