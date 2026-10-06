@@ -154,7 +154,7 @@ li:nth-child(even) article {
     color: $cor-primaria;
 }
 
-// GAVETA
+// GAVETAS
 
 .gaveta {
     margin-top: 1.5rem;
@@ -238,11 +238,20 @@ li:nth-child(even) article {
     color: $cor-primaria;
 }
 
-// CONTEÚDO DA VAGETA
+
+// CONTEÚDO DA GAVETA
 
 .gaveta-conteudo {
+    display: none;
     padding: 0 1.75rem 1.5rem;
 }
+
+.gaveta-conteudo.aberta {
+    display: block;
+}
+
+
+// HABILIDADES
 
 .habilidade {
     padding: 1.25rem 0;
@@ -260,6 +269,7 @@ li:nth-child(even) article {
     color: $cor-texto-secundario;
 }
 
+
 // RESPONSIVO
 
 @media (max-width: 768px) {
@@ -273,7 +283,11 @@ li:nth-child(even) article {
     }
 
     .gaveta-conteudo {
-        padding: 0 1.25rem 1.25rem;
+        padding: 0 1.25rem;
+    }
+
+    .gaveta-conteudo.aberta {
+        padding: 0 1.25rem 1rem;
     }
 
     .habilidade {

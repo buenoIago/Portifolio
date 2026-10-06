@@ -19,10 +19,23 @@ interface CategoriaHabilidades {
 })
 export class Habilidades {
 
-    public gavetaAberta: string | null = null;
+    public gavetasAbertas: string[] = [];
+
+    public alternarGaveta(id: string): void {
+
+        if (this.gavetasAbertas.includes(id)) {
+
+            this.gavetasAbertas = this.gavetasAbertas.filter(
+                gaveta => gaveta !== id
+            );
+
+            return;
+        }
+
+        this.gavetasAbertas.push(id);
+    }
 
     public readonly categorias: CategoriaHabilidades[] = [
-
         {
             id: 'linguagens',
             titulo: 'Linguagens de Programação',
@@ -70,9 +83,9 @@ export class Habilidades {
                     descricao: 'Desenvolvimento de aplicações web e APIs com .NET.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=angular',
+                    imagem: 'https://skillicons.dev/icons?i=angular&theme=dark',
                     titulo: 'Angular',
-                    descricao: 'Construção de aplicações web com componentes e TypeScript.'
+                    descricao: 'Construção de aplicações web escaláveis com componentes e TypeScript.'
                 },
                 {
                     imagem: 'https://skillicons.dev/icons?i=nodejs',
@@ -92,12 +105,12 @@ export class Habilidades {
             titulo: 'Banco de Dados',
             habilidades: [
                 {
-                    imagem: 'https://skillicons.dev/icons?i=postgres',
+                    imagem: 'https://skillicons.dev/icons?i=postgres&theme=dark',
                     titulo: 'PostgreSQL',
                     descricao: 'Persistência e gerenciamento de dados relacionais.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=mssql',
+                    imagem: 'https://skillicons.dev/icons?i=mssql&theme=dark',
                     titulo: 'SQL Server',
                     descricao: 'Gerenciamento e persistência de dados relacionais.'
                 },
@@ -114,32 +127,32 @@ export class Habilidades {
             titulo: 'Ferramentas',
             habilidades: [
                 {
-                    imagem: 'https://skillicons.dev/icons?i=git',
+                    imagem: 'https://skillicons.dev/icons?i=git&theme=dark',
                     titulo: 'Git',
                     descricao: 'Versionamento de código e colaboração em projetos de software.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=github',
+                    imagem: 'https://skillicons.dev/icons?i=github&theme=dark',
                     titulo: 'GitHub',
                     descricao: 'Hospedagem de código, colaboração e gerenciamento de projetos.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=docker',
+                    imagem: 'https://skillicons.dev/icons?i=docker&theme=dark',
                     titulo: 'Docker',
-                    descricao: 'Criação de ambientes isolados e consistentes para desenvolvimento.'
+                    descricao: 'Criação de ambientes isolados e consistentes para desenvolvimento e entrega.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=vscode',
+                    imagem: 'https://skillicons.dev/icons?i=vscode&theme=dark',
                     titulo: 'VS Code',
-                    descricao: 'Ambiente de desenvolvimento para produtividade e qualidade de código.'
+                    descricao: 'Ambiente de desenvolvimento extensível para produtividade e qualidade de código.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=githubactions',
+                    imagem: 'https://skillicons.dev/icons?i=githubactions&theme=dark',
                     titulo: 'GitHub Actions',
                     descricao: 'Automação de processos de integração e entrega contínua.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=azure',
+                    imagem: 'https://skillicons.dev/icons?i=azure&theme=dark',
                     titulo: 'Azure',
                     descricao: 'Hospedagem e operação de aplicações e serviços em nuvem.'
                 }
@@ -156,7 +169,7 @@ export class Habilidades {
                     descricao: 'Desenvolvimento e integração de serviços utilizando arquitetura REST.'
                 },
                 {
-                    imagem: 'https://skillicons.dev/icons?i=swagger',
+                    imagem: 'https://skillicons.dev/icons?i=dotnet',
                     titulo: 'Swagger / OpenAPI',
                     descricao: 'Documentação e testes de APIs.'
                 },
